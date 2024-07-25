@@ -1,0 +1,13 @@
+#!/bin/sh
+
+wall=$(find ~/Downloads/Wallpapers/ -type f -name "*.jpg" -o -name "*.png" | shuf -n 1)
+
+# make background
+xwallpaper --zoom $wall
+
+# Get wall color scheme
+wal -c 
+wal -i $wall
+
+# Update DWM topbar color to match with background using xdotool
+xdotool key super+F5 
